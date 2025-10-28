@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre')->required();
+            $table->string('apellido')->required();
+            $table->string('email')->unique()->required();
+            $table->decimal('salario',10,2)->required();
             $table->timestamps();
         });
     }
