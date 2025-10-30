@@ -32,6 +32,8 @@ class EmpleadosController extends Controller
     public function show(string $id)
     {
         //
+        $empleado = EmpleadosModel::findOrFail($id);
+        return response()->json($empleado);
     }
 
     /**
